@@ -1,5 +1,5 @@
 pipeline {
-    // From the Jenkins-public repository on Github...
+    // From the Jenkins-public repository on Github [https://github.com/epretorious/Jenkins-public.git]
     agent any
     parameters {
         choice(name: 'DIRECTION', choices: ['Coming', 'Going'], description: 'Are you coming or going?')
