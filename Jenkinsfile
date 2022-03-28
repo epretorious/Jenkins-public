@@ -27,7 +27,10 @@ pipeline {
         }
         stage('Goodbye') {
             when {
-                expression { params.DIRECTION == 'Going' }
+                allOf {
+                    expression { params.DIRECTION == 'Going' }
+                    expression { params.NAME != 'World' }
+                }
             }
             steps {
                 echo "Goodbye, ${params.NAME}!"
